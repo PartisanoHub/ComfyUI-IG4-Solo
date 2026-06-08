@@ -9,6 +9,21 @@ A lightweight, optimized custom guider node for ComfyUI.
 * **Staged Guidance Ready:** Designed to pair perfectly with `CFGOverride` nodes for advanced "natural-to-sharp" sampling transitions.
 * **Lightweight:** Clean, efficient code with no unnecessary dependencies.
 
+## Why Use This Node?
+Ideogram 4 is a powerful model that utilizes both a conditional and an unconditional model branch. While using both is ideal for quality, it can be computationally heavy.
+
+**IG4 Solo** is designed specifically to allow you to run Ideogram 4 in a **"Single-Model" mode**. By using this node, you can bypass the need to load the secondary `ID_deogram4_unconditional_fp8_scaled` model, saving significant VRAM and potentially increasing generation speed. 
+
+*Note: While using a single model can reduce VRAM usage, expect a slight variation in stylistic output compared to the official dual-model setup. This node is perfect for rapid prototyping, experimentation, or low-VRAM environments.*
+
+## Example Workflow
+To get the most out of **IG4 Solo**, we recommend a staged guidance schedule:
+
+1. **IG4 Solo:** Set mode to `cond_only` (or `cfg` at 1.0).
+2. **CFGOverride:** Chain this after your model to force higher CFG values (e.g., `5.0`) only during the final 20% of sampling (80%–100%).
+
+This setup provides the natural, creative structure of a low-CFG generation with the sharp, high-contrast detail finish of high-CFG.
+
 ## Installation
 
 ### Option 1: ComfyUI Manager (Recommended)
