@@ -1,3 +1,4 @@
+<img width="1936" height="1088" alt="IG4" src="https://github.com/user-attachments/assets/43e320dd-9a3f-4dc9-8022-2c4085176040" />
 # ComfyUI IG4 Solo
 
 A lightweight, optimized custom guider node for ComfyUI. 
